@@ -1,0 +1,29 @@
+:root {
+  --ink: #101b32;
+  --navy: #12294b;
+  --teal: #17658c;
+  --orange: #159bd5;
+  --cream: #f4f7f9;
+  --muted: #68727e;
+  --line: #d9e1e7;
+}
+
+.brand { display: inline-flex; align-items: center; width: 192px; line-height: 0; }
+.brand img { display: block; width: 100%; height: auto; max-height: 54px; object-fit: contain; object-position: left center; }
+.site-header { background: #101b32; }
+.nav-links a:hover { color: #55c4f2; }
+.nav-cta { border-color: #159bd5; }
+.hero, .process, .footer { background: #101b32; }
+.hero h1 em, h2 em, .eyebrow, .service-number, .service-card a, .text-link span, .table-row strong, .hero-stamp, .process-image b, .story-card span, .story-card a, .orange { color: #159bd5; }
+.eyebrow span, .button-primary, .hero-stamp, .avatar { background: #159bd5; }
+.service-card.featured { background: #12294b; border-color: #12294b; }
+.hero-stamp { color: #fff; }
+.photos { background: #eaf2f6; }
+.brand + p { color: #b7c4d2; }
+.footer .brand { width: 220px; }
+.footer .brand img { max-height: 65px; }
+
+@media (max-width: 800px) {
+  .brand { width: 155px; }
+  .footer .brand { width: 190px; }
+}
