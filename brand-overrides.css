@@ -9,6 +9,8 @@
 }
 
 .brand { display: inline-flex; align-items: center; width: 192px; line-height: 0; }
+.site-header .brand,
+.footer .brand { background: #fff; border-radius: 5px; padding: 7px 11px; }
 .brand img { display: block; width: 100%; height: auto; max-height: 54px; object-fit: contain; object-position: left center; }
 .site-header { background: #101b32; }
 .nav-links a:hover { color: #55c4f2; }
@@ -25,5 +27,6 @@
 
 @media (max-width: 800px) {
   .brand { width: 155px; }
+  .site-header .brand { padding: 6px 9px; }
   .footer .brand { width: 190px; }
 }
