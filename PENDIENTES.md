@@ -64,6 +64,20 @@ programación de emisiones, recuperación de módulo bloqueado y precio por unid
 de banco, verificadas una por una para que correspondan al giro. Se reemplazan editando
 el `src` de cada `<img>`.
 
+### Hero de inicio
+
+El hero usa dos imágenes distintas según el tamaño de pantalla, en `assets/hero/`:
+
+| Archivo | Cuándo se usa | Origen |
+|---|---|---|
+| `hero-mobile.webp` / `.jpg` | pantallas ≤ 900 px | **foto real** (recorte vertical de la unidad naranja) |
+| `hero-desktop.webp` / `.jpg` | pantallas > 900 px | **foto de banco**, sigue pendiente |
+
+Falta la foto propia horizontal para escritorio: **2400 × 1350 px**, 16:9. Al llegar,
+regenerar las dos variantes (`.webp` y `.jpg`) con el mismo nombre y no hay que tocar
+el CSS. La versión móvil ya es foto real, pero su recorte sale de una imagen de
+960 × 1280; si Francisco manda esa toma en mayor resolución, conviene rehacerla.
+
 ### Dónde van las fotos de motor que pidió el cliente
 
 - **`index.html` → sección "Motores que atendemos"**: ocho tarjetas, una por marca

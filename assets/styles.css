@@ -137,10 +137,19 @@ h1, h2, h3, h4, h5 { margin: 0 0 .5em; line-height: 1.15; font-weight: 700; }
 .hero {
   position: relative; color: var(--white); overflow: hidden;
   border-bottom: 4px solid var(--pi-blue); min-height: 560px;
-  background:
+  background-color: var(--pi-ink);
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  /* Escritorio: degradado horizontal, la foto se ve del centro a la derecha.
+     La primera declaración es el respaldo JPG para navegadores sin image-set(). */
+  background-image:
     linear-gradient(90deg, rgba(8,18,38,.97) 0%, rgba(8,18,38,.94) 36%, rgba(8,18,38,.76) 54%, rgba(8,18,38,.34) 76%, rgba(8,18,38,0) 100%),
-    url('https://images.unsplash.com/photo-1599256872237-5dcc0fbe9668?auto=format&fit=crop&w=1800&q=80') no-repeat right center / cover,
-    var(--pi-ink);
+    url('hero/hero-desktop.jpg');
+  background-image:
+    linear-gradient(90deg, rgba(8,18,38,.97) 0%, rgba(8,18,38,.94) 36%, rgba(8,18,38,.76) 54%, rgba(8,18,38,.34) 76%, rgba(8,18,38,0) 100%),
+    image-set(url('hero/hero-desktop.webp') type('image/webp'),
+              url('hero/hero-desktop.jpg')  type('image/jpeg'));
 }
 .hero::after { content: ''; position: absolute; width: 480px; height: 480px; border-radius: 50%; background: radial-gradient(circle, rgba(21,155,213,.22), transparent 70%); top: -140px; right: -90px; filter: blur(80px); pointer-events: none; }
 .hero-inner { position: relative; z-index: 2; max-width: var(--container); margin: 0 auto; padding: 86px var(--gutter) 90px; }
@@ -164,7 +173,19 @@ h1, h2, h3, h4, h5 { margin: 0 0 .5em; line-height: 1.15; font-weight: 700; }
 .hero-stat-num small { font-size: 20px; font-weight: 700; margin-left: 2px; }
 .hero-stat-label { display: block; font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: rgba(255,255,255,.58); line-height: 1.4; }
 @media (max-width: 900px) {
-  .hero { background-position: right -200px center; min-height: 0; }
+  /* Móvil: foto real en vertical y degradado de arriba hacia abajo.
+     El degradado horizontal del escritorio dejaba un corte duro a la mitad. */
+  .hero {
+    min-height: 0;
+    background-position: center top;
+    background-image:
+      linear-gradient(180deg, rgba(8,18,38,.88) 0%, rgba(8,18,38,.72) 35%, rgba(8,18,38,.62) 62%, rgba(8,18,38,.82) 100%),
+      url('hero/hero-mobile.jpg');
+    background-image:
+      linear-gradient(180deg, rgba(8,18,38,.88) 0%, rgba(8,18,38,.72) 35%, rgba(8,18,38,.62) 62%, rgba(8,18,38,.82) 100%),
+      image-set(url('hero/hero-mobile.webp') type('image/webp'),
+                url('hero/hero-mobile.jpg')  type('image/jpeg'));
+  }
   .hero-inner { padding: 56px var(--gutter) 64px; }
   .hero-stats { grid-template-columns: 1fr 1fr; gap: 22px 0; max-width: 460px; }
   .hero-stat:nth-child(2) { border-right: none; }
