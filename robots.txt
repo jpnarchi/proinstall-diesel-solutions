@@ -1,0 +1,5 @@
+# ProInstall And Diesel Solutions — https://proinstalldiesel.com
+User-agent: *
+Allow: /
+
+Sitemap: https://proinstalldiesel.com/sitemap.xml

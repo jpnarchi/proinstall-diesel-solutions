@@ -20,8 +20,14 @@ para que un cliente que no es técnico entienda en segundos qué se ofrece.
 ```
 assets/styles.css                 Sistema de diseño
 assets/main.js                    Menú móvil, reveal, acordeón FAQ y formulario
-assets/proinstall-logo.png        Logotipo a color (header, sobre fondo blanco)
-assets/proinstall-logo-blanco.png Logotipo en blanco (footer, sobre fondo azul)
+assets/proinstall-logo.png        Logotipo a color, original en alta resolución
+assets/proinstall-logo-blanco.png Logotipo en blanco, original en alta resolución
+assets/proinstall-logo-header.png Versión ligera del logo a color que carga el header
+assets/proinstall-logo-footer.png Versión ligera del logo en blanco que carga el footer
+assets/og-image.jpg               Imagen 1200 × 630 que se ve al compartir el sitio
+assets/favicon-48.png / -192.png  Favicon; apple-touch-icon.png va en la raíz
+robots.txt / sitemap.xml          Indicaciones para buscadores
+404.html                          Página de "no encontrada" (Vercel la sirve sola)
 ```
 
 Sin dependencias ni paso de compilación. Para verlo en local:
@@ -42,6 +48,23 @@ python3 -m http.server 8000
 
 Tipografías: **Barlow Condensed** (títulos), **Inter** (texto), **JetBrains Mono** (etiquetas).
 Iconografía: Font Awesome 6 (CDN).
+
+## SEO
+
+Dominio oficial: **https://proinstalldiesel.com** (sin `www`; `www` redirige al dominio raíz).
+
+Cada página lleva en su `<head>`: `<title>` y `description` propios, `canonical`,
+Open Graph, Twitter Card y un bloque JSON-LD (`AutoRepair`, `WebSite`, la página,
+migas de pan y, donde hay acordeón, `FAQPage`).
+
+Al editar el sitio, mantener esto en sincronía:
+
+- **Teléfono, correo u horario**: cambian en el HTML visible **y** en el JSON-LD de las 4 páginas.
+- **Preguntas frecuentes**: el texto del acordeón y el de `FAQPage` deben ser el mismo.
+- **Página nueva**: agregarla a `sitemap.xml` con su `canonical`, y actualizar `<lastmod>`.
+- **Un solo `<h1>` por página**; debajo, `<h2>` y `<h3>` sin saltarse niveles.
+- **Portada**: se enlaza como `./`, no como `index.html`.
+- **Logo nuevo**: regenerar también las versiones `-header` (alto 156 px) y `-footer` (alto 162 px).
 
 ## Pendientes de contenido
 

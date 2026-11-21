@@ -125,12 +125,14 @@ módulo legible → equipo de diagnóstico conectado → resultado.
 
 ## 4. Logotipo
 
-- El **footer usa `assets/proinstall-logo-blanco.png`**, una versión en blanco generada a
+- `assets/proinstall-logo-blanco.png` es una versión en blanco generada a
   partir del PNG original (se conservó la silueta y se quitó la caja blanca de fondo, que
   es lo que se veía "encimado").
-- Cuando llegue el **PNG oficial del logo en blanco**, basta con reemplazar ese archivo
-  conservando el mismo nombre; no hay que tocar el HTML.
-- El header sigue usando `assets/proinstall-logo.png` a color, porque va sobre fondo blanco.
+- Cuando llegue el **PNG oficial del logo en blanco**, reemplazar ese archivo conservando
+  el nombre y regenerar `proinstall-logo-footer.png`; no hay que tocar el HTML.
+- El header usa `assets/proinstall-logo-header.png` y el footer `assets/proinstall-logo-footer.png`:
+  copias reducidas (alto 156 y 162 px) de los originales, que pesaban 431 KB y 146 KB para
+  mostrarse a 52 px de alto. **Si cambia el logo hay que regenerar también estas copias.**
 - Un **SVG** del logo se vería más nítido en pantallas retina; si existe, conviene pedirlo.
 
 ---
@@ -147,4 +149,20 @@ texto y foto, y retirar la nota (`<div class="editorial-note">`).
 
 - **Dirección física**, si se quiere publicar, para poder agregar un mapa en `contacto.html`.
 - **Redes sociales reales** (Facebook, Instagram).
-- **Dominio** para las etiquetas `og:url` y `canonical`.
+- ~~Dominio para las etiquetas `og:url` y `canonical`.~~ Resuelto: `https://proinstalldiesel.com`.
+
+---
+
+## 7. SEO: datos que faltan
+
+- **Dirección o al menos ciudad y estado del taller.** Hoy el JSON-LD sólo declara el país
+  (`addressCountry: MX`) porque el sitio no publica más. Sin ciudad, Google no puede
+  mostrar el negocio en búsquedas locales ("programación de ECM en …"). Al tenerla,
+  agregar `streetAddress`, `addressLocality`, `addressRegion` y `postalCode` en el
+  bloque `AutoRepair` de las 4 páginas, y mencionarla en el texto visible.
+- **Redes sociales reales.** Los iconos de Facebook e Instagram apuntan a la portada de
+  cada red. Al tener los perfiles, poner sus URL en los enlaces y en `sameAs` del JSON-LD.
+- **Perfil de Empresa en Google** (Google Business Profile): darlo de alta con el mismo
+  nombre, teléfono y horario que el sitio.
+- **Correo `contacto@proinstalldiesel.com`**: confirmar que el buzón existe; ya figura en
+  el JSON-LD además del sitio.
