@@ -1,4 +1,4 @@
-# ProInstall And Diesel Solutions
+ # ProInstall And Diesel Solutions
 
 Sitio web estático (HTML + CSS + JS, sin build) para **ProInstall And Diesel Solutions**,
 empresa dedicada a la **programación electrónica de maquinaria pesada y tractocamiones**.
@@ -7,7 +7,7 @@ El sitio se mantiene deliberadamente corto: cuatro páginas, textos breves y len
 para que un cliente que no es técnico entienda en segundos qué se ofrece.
 
 ## Páginas
-
+aa
 | Archivo | Sección |
 |---|---|
 | `index.html` | Inicio — hero, servicios, marcas de motor, quiénes somos, proceso, trabajos y FAQ |
